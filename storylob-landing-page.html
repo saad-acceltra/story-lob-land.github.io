@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoryLob | Where Stories Take Shape — From Script to Scene</title>
+    <meta name="description" content="StoryLob is the creative engine for storytellers. Transform ideas into illustrated scenes and storyboards using AI — beautifully, intuitively, collaboratively.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script>
+        // Simple JavaScript for demonstration purposes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality for Use Cases section
+            const tabButtons = document.querySelectorAll('.tab-button');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // In a real implementation, we would show/hide tab content here
+                });
+            });
+            
+            // Toggle pricing between monthly and annual
+            const pricingToggle = document.querySelector('.toggle-switch');
+            let isAnnual = false;
+            
+            pricingToggle.addEventListener('click', function() {
+                isAnnual = !isAnnual;
+                this.style.transform = isAnnual ? 'translateX(2rem)' : 'translateX(0)';
+                
+                // In a real implementation, we would update pricing values
+    </script>
+    <style>
+        :root {
+            --primary: rgb(120, 92, 214);
+            --primary-dark: rgb(100, 72, 194);
+            --primary-light: rgb(140, 112, 234);
+            --secondary: rgb(255, 125, 80);
+            --neutral-100: rgb(250, 250, 252);
+            --neutral-200: rgb(240, 240, 245);
+            --neutral-300: rgb(220, 220, 230);
+            --neutral-800: rgb(40, 40, 60);
+            --neutral-900: rgb(20, 20, 40);
+            --accent-teal: rgb(80, 200, 180);
+            --text-dark: rgb(30, 30, 50);
+            --text-light: rgb(255, 255, 255);
+            --text-muted: rgb(120, 120, 150);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--neutral-100);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: var(--neutral-200);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--neutral-300);
+            transform: translateY(-2px);
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            background-color: var(--neutral-100);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 2.5rem;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0;
+            /* background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%); */
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+            background-image:url('storylob-1.png');
+            background-size: cover;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,0L100,100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            background-color: var(--primary-light);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon svg {
+            width: 2rem;
+            height: 2rem;
+            fill: white;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 0;
+            background-color: var(--neutral-200);
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-number {
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.2;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .step h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-image {
+            flex: 1;
+            background-color: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 6rem 0;
+        }
+
+        .use-case-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--neutral-300);
+        }
+
+        .tab-button {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .tab-button.active {
+            color: var(--primary);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .tab-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .tab-image {
+            flex: 1;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tab-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .tab-text {
+            flex: 1;
+        }
+
+        .tab-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab-text ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .tab-text li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .tab-text li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 0;
+            background-color: var(--neutral-200);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background-color: var(--neutral-300);
+            overflow: hidden;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 0;
+        }
+
+        .pricing-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .toggle-option {
+            font-weight: 500;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 4rem;
+            height: 2rem;
+            background-color: var(--primary);
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            top: 0.25rem;
+            left: 0.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: white;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background-color: white;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .featured-tag {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .pricing-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-description {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-period {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--neutral-200);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--neutral-900);
+            color: var(--text-light);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 2.5rem;
+        }
+
+        .footer-logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .footer-description {
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+        }
+
+        .social-link svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: white;
+        }
+
+        .footer-column h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            opacity: 0.7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: var(--text-light);
+            opacity: 0.7;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                max-width: 50%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem 2rem;
+            }
+
+            .tab-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 0;
+                background-position: center bottom;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .step {
+                flex-direction: column !important;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem 2rem;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .header-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .use-case-tabs {
+                flex-wrap: wrap;
+            }
+
+            .tab-button {
+                flex: 1 0 33%;
+                text-align: center;
+                padding: 0.75rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Add shadow for storylob image containers */
+        .storylob-img-shadow {
+            box-shadow: 0 4px 16px 0 rgba(40,40,60,0.15);
+        }
+
+        /* Add black text outline for hero section text (not buttons) */
+        .hero h1, .hero p, .hero .hero-content, .hero a:not(.btn) {
+            text-shadow:
+                -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
+        }
+        .hero .btn {
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiByeD0iNDAiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2IoMTIwLCA5MiwgMjE0KSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgogIDxwYXRoIGQ9Ik03MCA1NSBMMTMwIDU1IEMxMzAgNTUgMTMwIDU1IDEzMCA1NSBDMTE1IDY1IDExNSA5MCAxMzAgMTAwIEMxMzAgMTAwIDEzMCAxMDAgMTMwIDEwMCBMNzAgMTAwIEM3MCAxMDAgNzAgMTAwIDcwIDEwMCBDODUgOTAgODUgNjUgNzAgNTUgQzcwIDU1IDcwIDU1IDcwIDU1IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiKDEyMCwgOTIsIDIxNCkiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8cGF0aCBkPSJNNzAgMTAwIEwxMzAgMTAwIEMxMzAgMTAwIDEzMCAxMDAgMTMwIDEwMCBDMTE1IDExMCAxMTUgMTM1IDEzMCAxNDUgQzEzMCAxNDUgMTMwIDE0NSAxMzAgMTQ1IEw3MCAxNDUgQzcwIDE0NSA3MCAxNDUgNzAgMTQ1IEM4NSAxMzUgODUgMTEwIDcwIDEwMCBDNzAgMTAwIDcwIDEwMCA3MCAxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2IoMTIwLCA5MiwgMjE0KSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgo8L3N2Zz4=" alt="StoryLob Logo">
+                <span class="logo-text">StoryLob</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#use-cases">Use Cases</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-buttons">
+                <a href="#" class="btn btn-secondary">Log In</a>
+                <a href="#" class="btn btn-primary">Start Free Trial</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Where Stories Take Shape — From Script to Scene</h1>
+                <p>StoryLob is the creative engine for storytellers. Transform ideas into illustrated scenes and storyboards using AI — beautifully, intuitively, collaboratively.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Start Your Free Trial</a>
+                    <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How StoryLob Works</h2>
+                <p>From initial concept to final storyboard in four simple steps</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">01</div>
+                        <h3>Create Your Project</h3>
+                        <p>Set up your project with a name, description, and style preferences. Choose your aspect ratio (3:2, 2:3, or 1:1) and configure your AI provider settings.</p>
+                    </div>
+                    <div class="step-image storylob-img-shadow">
+                        <img src="/Users/saadkhan/Downloads/storylob-2.png" alt="Create Your Project">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">02</div>
+                        <h3>Design Your Characters</h3>
+                        <p>Create detailed character profiles and generate character images with AI. Refine appearances and maintain consistent character visuals throughout your story.</p>
+                    </div>
+                    <div class="step-image storylob-img-shadow">
+                        <img src="/Users/saadkhan/Downloads/storylob-3.png" alt="Design Your Characters">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">03</div>
+                        <h3>Organize Scenes & Frames</h3>
+                        <p>Structure your narrative with scenes and frames. Use the intuitive drag-and-drop interface to reorder and organize your story's visual flow.</p>
+                    </div>
+                    <div class="step-image storylob-img-shadow">
+                        <img src="/Users/saadkhan/Downloads/storylob-4.png" alt="Organize Scenes & Frames">
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-content">
+                        <div class="step-number">04</div>
+                        <h3>Generate & Refine Images</h3>
+                        <p>Bring your story to life with AI-generated images for each frame. Iterate, refine, and perfect your visual narrative with our powerful version control system.</p>
+                    </div>
+                    <div class="step-image storylob-img-shadow">
+                        <img src="/Users/saadkhan/Downloads/storylob-5.png" alt="Generate & Refine Images">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <h2>Perfect for Every Storyteller</h2>
+                <p>See how different creative professionals are using StoryLob to bring their visions to life</p>
+            </div>
+            
+            <div class="use-case-tabs">
+                <button class="tab-button active">Authors</button>
+                <button class="tab-button">Filmmakers</button>
+                <button class="tab-button">Game Developers</button>
+                <button class="tab-button">Animators</button>
+            </div>
+            
+            <div class="tab-content">
+                <div class="tab-image storylob-img-shadow">
+                    <img src="/Users/saadkhan/Downloads/storylob-6.png" alt="Author using StoryLob">
+                </div>
+                <div class="tab-text">
+                    <h3>Authors & Novelists</h3>
+                    <p>Visualize your novel scenes and characters to maintain consistency throughout your story. Use StoryLob to create reference images for cover designers and marketing materials.</p>
+                    <ul>
+                        <li>Visualize complex scenes to ensure descriptive accuracy</li>
+                        <li>Create character reference sheets for consistent descriptions</li>
+                        <li>Generate promotional images for marketing your book</li>
+                        <li>Collaborate with editors and cover designers with visual references</li>
+                        <li>Create illustrated companion guides for your novels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Join thousands of creative professionals who are transforming their storytelling with StoryLob</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        StoryLob has transformed my novel writing process. Being able to visualize scenes before writing them has helped me craft more immersive descriptions and maintain consistency throughout my series.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar storylob-img-shadow">
+                            <img src="/Users/saadkhan/Downloads/storylob-7.png" alt="Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Fantasy Author</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The AI image generation is mind-blowing. I can describe a complex scene with my characters, and StoryLob creates exactly what I need for my storyboards. It's cut my pre-production time in half.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar storylob-img-shadow">
+                            <img src="/api/placeholder/60/60" alt="Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Indie Filmmaker</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a game developer, consistency in character design across scenes is crucial. StoryLob's character management system ensures my concept art maintains a unified style throughout development.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar storylob-img-shadow">
+                            <img src="/api/placeholder/60/60" alt="Avatar">
+                        </div>
+                        <div class="author-info">
+                            <h4>Elena Rodriguez</h4>
+                            <p>Game Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Choose the plan that fits your creative needs</p>
+            </div>
+            
+            <div class="pricing-toggle">
+                <span class="toggle-option">Monthly</span>
+                <div class="toggle-switch"></div>
+                <span class="toggle-option">Annually (Save 20%)</span>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Starter</h3>
+                    <p class="pricing-description">Perfect for solo creators and small projects</p>
+                    <div class="pricing-price">$19</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>3 active projects</li>
+                        <li>200 AI image generations/month</li>
+                        <li>10 characters per project</li>
+                        <li>Basic version history</li>
+                        <li>Standard image resolution</li>
+                        <li>Email support</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Choose Starter</a>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-tag">Most Popular</div>
+                    <h3 class="pricing-name">Professional</h3>
+                    <p class="pricing-description">Ideal for serious creators and small teams</p>
+                    <div class="pricing-price">$49</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>10 active projects</li>
+                        <li>500 AI image generations/month</li>
+                        <li>Unlimited characters per project</li>
+                        <li>Advanced version history</li>
+                        <li>High-resolution images</li>
+                        <li>Priority support</li>
+                        <li>Team collaboration (up to 3 users)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">Choose Professional</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Studio</h3>
+                    <p class="pricing-description">For professional teams and studios</p>
+                    <div class="pricing-price">$99</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited projects</li>
+                        <li>1,500 AI image generations/month</li>
+                        <li>Unlimited characters</li>
+                        <li>Complete version history</li>
+                        <li>Ultra-high-resolution images</li>
+                        <li>Priority support with dedicated manager</li>
+                        <li>Team collaboration (up to 10 users)</li>
+                        <li>Custom API integration</li>
+                    </ul>
+                    <a href="#" class="btn btn-secondary">Choose Studio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Storytellers</h2>
+                <p>Everything you need to bring your stories to life, from concept to final scene</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM12 18.72L5 15v-3.73L12 15l7-3.73V15l-7 3.72z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>AI-Powered Image Generation</h3>
+                    <p>Create stunning scenes and characters using advanced AI. Simply describe what you envision, and StoryLob brings it to life with remarkable accuracy.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2V9h-2V7h4v10z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>Character Management</h3>
+                    <p>Create detailed character profiles and generate consistent character appearances across all your scenes with our intelligent character system.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>Complete Version Control</h3>
+                    <p>Keep track of every iteration of your scenes and characters. Browse through version history and easily restore previous concepts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>Seamless Collaboration</h3>
+                    <p>Work together with your team in real-time. Share projects, assign roles, and get feedback all in one place with permission-based access control.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>Scene & Frame Organization</h3>
+                    <p>Organize your story with intuitive scene and frame management. Reorder, group, and structure your narrative with drag-and-drop simplicity.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="white"></path>
+                        </svg>
+                    </div>
+                    <h3>Custom Style Definitions</h3>
+                    <p>Define your project's visual style through text prompts. Maintain consistency across all generated images while exploring creative possibilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Start Creating Your Visual Story Today</h2>
+            <p>Join thousands of creative professionals who are already using StoryLob to bring their stories to life. Try it risk-free with our 14-day free trial.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-primary">Start Your Free Trial</a>
+                <a href="#" class="btn btn-secondary">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTYwIiByeD0iNDAiIHJ5PSI0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgogIDxwYXRoIGQ9Ik03MCA1NSBMMTMwIDU1IEMxMzAgNTUgMTMwIDU1IDEzMCA1NSBDMTE1IDY1IDExNSA5MCAxMzAgMTAwIEMxMzAgMTAwIDEzMCAxMDAgMTMwIDEwMCBMNzAgMTAwIEM3MCAxMDAgNzAgMTAwIDcwIDEwMCBDODUgOTAgODUgNjUgNzAgNTUgQzcwIDU1IDcwIDU1IDcwIDU1IFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMTAiLz4KICA8cGF0aCBkPSJNNzAgMTAwIEwxMzAgMTAwIEMxMzAgMTAwIDEzMCAxMDAgMTMwIDEwMCBDMTE1IDExMCAxMTUgMTM1IDEzMCAxNDUgQzEzMCAxNDUgMTMwIDE0NSAxMzAgMTQ1IEw3MCAxNDUgQzcwIDE0NSA3MCAxNDUgNzAgMTQ1IEM4NSAxMzUgODUgMTEwIDcwIDEwMCBDNzAgMTAwIDcwIDEwMCA3MCAxMDAgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgo8L3N2Zz4=" alt="StoryLob Logo">
+                        <span class="footer-logo-text">StoryLob</span>
+                    </div>
+                    <p class="footer-description">Where Stories Take Shape — From Script to Scene. StoryLob is the creative engine for storytellers, designed for authors, animators, and filmmakers.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Use Cases</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 StoryLob. All rights reserved.</div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
